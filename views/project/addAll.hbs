@@ -8,21 +8,16 @@
 <form action="/pdf/{{project._id}}" method="POST" autocomplete="off">
 
     <div class="row">
-
         <div class="col-md-6">
-        <div class="form-group">
-         <input type="hidden" class="form-control" name="title" autocomplete="off" id="Name" placeholder="Title" value="{{project.title}}">
-
-
-        </div>
+            <div class="form-group">
+                <input type="hidden" class="form-control" name="title" autocomplete="off" id="Name" placeholder="Title" value="{{project.title}}">
+            </div>
         </div>
 
         <div class="col-md-6">
-        <div class="form-group">
-         <input type="hidden" class="form-control" name="programCode" autocomplete="off" id="Name" placeholder="programCode" value="{{project.programCode}}">
-
-
-        </div>
+            <div class="form-group">
+                <input type="hidden" class="form-control" name="programCode" autocomplete="off" id="Name" placeholder="programCode" value="{{project.programCode}}">
+            </div>
         </div>
     </div>
 
@@ -43,21 +38,13 @@
 
         </div>
         </div>
-
-
-
     </div>
     <div class="row">
-
         <div class="col-md-6">
-        <div class="form-group">
-         <input type="hidden" class="form-control" name="comment" autocomplete="off" id="Name" placeholder="comment" value="{{title.comment}}">
-
-
+            <div class="form-group">
+                 <input type="hidden" class="form-control" name="comment" autocomplete="off" id="Name" placeholder="comment" value="{{title.comment}}">
+            </div>
         </div>
-        </div>
-
-
     </div>
     {{#each newList}}
 
