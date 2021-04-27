@@ -40,10 +40,10 @@ titleSchema.method('dates', function dates() {
     };
 });
 
-titleSchema.method('overduePercentage', function overduePercent() {
+titleSchema.method('overduePercentage', function overduePercentage() {
     var { start, end, length } = this.dates();
     var now = Date.now();
-    var fixed = (now - end / length).toFixed(2);
+    var fixed = ((now - end) / length).toFixed(2);
     var od = Math.min(100, Number(fixed) * 100);
     if (isNaN(od)) {
         return 0;
