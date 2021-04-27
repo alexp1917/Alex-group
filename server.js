@@ -1,14 +1,20 @@
 require('./models/db');
+
 const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const bodyparser = require('body-parser');
 const Handlebars = require('handlebars');
+
 // const mongoose = require('mongoose');
 // mongoose.set('useFindAndModify', false);
+
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 const projectControllers = require('./controllers/projectControllers');
-const pdfmakeControllers = require('./pdfMake/pdfmakeControllers')
+
+// const pdfmakeControllers = require('./pdfMake/pdfmakeControllers')
+var pdfmakeControllers = express.Router();
+
 var app = express();
 var PORT = process.env.PORT || 4000;
 
