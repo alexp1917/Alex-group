@@ -31,8 +31,9 @@ function classForPercentage(percent) {
 }
  
 function addPercentInfoToMs(ms) {
-    var percent = ms.width = milestonePercentage(ms);
+    var percent = milestonePercentage(ms);
     ms.classForPercentage = classForPercentage(percent);
+    ms.width = Math.min(100, percent);
 }
 
 
