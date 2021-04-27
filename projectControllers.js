@@ -319,35 +319,10 @@ router.get('/delete/:id/', (req, res) => {
 });
 
 
-//
-//delete only the project 
-// router.get('/delete/:id', (req,res) => {
-
-//     Project.findByIdAndDelete(req.params.id, (err, doc) => {
-//         if(!err){
-            
-//             res.redirect('/homeAndList');
-//         }else{
-//             console.log('Error in project delete :' + err);
-//         }
-//     })
-// });
 
 
-// delete only the tilte which belongs to that project 
-// router.get('/delete/title/:id', (req,res) => {
 
-//     Title.findOneAndDelete(req.params.id, (err, doc) => {
-//         if(!err){
-           
-//             res.redirect('/homeAndList');
-            
-//         }else{
-//             console.log('Error in the title list delete :' + err);
-//         }
-//     })
-// });
-//  import Component from "@ember/component";
+
 
 
 
@@ -357,126 +332,6 @@ router.get('/delete/:id/', (req, res) => {
 module.exports = router;
 
 
-
-// get project info and display them on the project description page
-// router.get('/create/:id', (req,res) => {
-//     // const id = req.params.id;
-//     Project.findById((req.params.id, (err, doc) => {
-//         if (!err) {
-//             res.render("project/addAll", {
-//                 viewTitle: "Project Description:",
-                
-//                 project: doc
-                
-//             });
-//         }
-//     });
-   
-   
-// });
-
-
-//"/list"
-    // router.get('/',(req,res) => {
-    //     //  res.json("from the Yasser")
-    //     Project.find((err, docs) => {
-    //         if(!err) {
-    //             res.render("project/list", {
-    //                 list: docs
-    //             } )
-    //         }else{
-    //             console.log('Error in retrieving project list :' + err);
-    //         }
-    //     })
-    // })
-
-
-
-//post insert & update
-// router.post('/add&edit', (req, res) => {
-//     //  console.log(req.body);
-//     // insertRecord(req,res);
-    
-//      if(req.body._id == ''){
-//     insertRecord(req,res);
-//      } 
-//      else{
-//         updateRecord(req,res);
-//      }
-// });
-
-
-// app.get ("/user/:id", function (req, res){
-//     res.sned(request.params.id);
-//  });
-
-
-
-// add new get for test
-// router.get('/create/titleUpdated/:projectId', (req,res) => {
-//     const id = req.params.projectId;
-//     const titlesList = [];
-//        Project.findOne({_id:id}).populate('titlesList').exec((err, doc) => {
-//            if(!err){
-//                res.render("project/addAll", {
-//                    viewTitle: "Project Description:",
-//                    viewTitlee: "Timeline:",
-//                    project: doc,
-//                    newList: doc.titlesList
-                               
-   
-//                });
-//            }
-//        });
-//     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// async function updateRecord(req, res) {
-    //     try {
-    //       var { _id } = req.body;
-    //       var r, j, p = new Promise((r_, j_) => { r = r_; j = j_; });
-    //       Project.findOneAndUpdate({ _id }, req.body, { new: true },
-    //         (err, doc) => err ? j(err) : r(doc));
-    
-    //        await p;
-    //        await Title.deleteMany({project : _id});
-    //        var title = req.body.newTitles;
-    //        var starts = req.body.startDate;
-    //        var ends = req.body.endDate;
-
-    //        await Title.insertMany(title.map((newTitle,i) => ({
-    //        newTitle,
-    //        project: _id,
-    //        startDate: starts [i],
-    //        endDate: ends [i]
-    //        })))      
-         
-    //       res.redirect('/');
-    //     } catch (err) {
-      
-    //       // should do something like this to show user the error:
-    //       //res.redirect('/?error=' + err.message);
-    //       console.error('Error during record update : ' , err);
-    //     }
-    //   }
-
- 
 
 
 
