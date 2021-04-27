@@ -23,11 +23,14 @@ function milestonePercentage(ms, now = new Date()) {
 }
  
 function classForPercentage(percent) {
-    switch (true) {
-        case percent < 60: return 'success';
-        case percent < 80: return 'warning';
-        default:           return 'danger';
-    }
+    if (percent === 100)
+        return 'success';
+
+    if (percent > 100)
+        return 'danger';
+
+    // if (percent < 100)
+    return 'warning';
 }
  
 function addPercentInfoToMs(ms) {
