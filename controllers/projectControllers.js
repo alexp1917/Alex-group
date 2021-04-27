@@ -135,6 +135,7 @@ router.get('/create/:projectId', (req,res) => {
             // list of titles for the project
             var { titlesList } = project;
             titlesList.forEach(addPercentInfoToMs);
+            titlesList.forEach(t => t.od = t.overduePercentage());
  
             var locals = {
                 viewTitle: "Project Description:",

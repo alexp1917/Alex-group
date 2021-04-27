@@ -243,10 +243,26 @@
                 </div>
                  </td>
 
-
+                <style type="text/css">
+                    .overdue-bar {
+                        position: absolute;
+                        width: 3px;
+                        height: 100%;
+                        border-radius: 2px;
+                        background-color: darkred;
+                    }
+                    .overdue-holder {
+                        position: relative;
+                        width: 0;
+                        height: 100%;
+                    }
+                </style>
 
                 <td>
                    <div class="progress">
+                        <div class="overdue-holder">
+                            <div class="overdue-bar" style="left:{{this.od}}px;"></div>
+                        </div>
                     <div class="progress-bar progress-bar-{{this.classForPercentage}}"
                     role="progressbar" aria-valuenow="40"
                     aria-valuemin="0" aria-valuemax="100" style="width:{{this.width}}%">
