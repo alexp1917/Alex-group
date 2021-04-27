@@ -1,0 +1,174 @@
+<h3>{{viewTitle}}</h3><br>    
+
+
+	<div class="row">
+        <form  action="/update/{{project._id}}" method="POST"  autocomplete="off">
+		<input type="hidden" name="_id" value="{{project._id}}">
+		</div>
+                		<div class="row">
+
+						<div class="col-md-6">
+                  		<div class="form-group">
+                  		    <label>Title:</label>
+
+                            <input type="text" class="form-control" name="title" autocomplete="off" id="Name" placeholder="Title" value="{{project.title}}"> 
+                  		</div>
+                		</div>
+						
+                  	 
+
+                    	<div class="col-md-6"> 
+                  		<div class="form-group">
+                                 <label>Program Code:</label>
+                                 
+                            <input type="text" class="form-control" name="programCode" autocomplete="off" id="email" placeholder="Program Code" value="{{project.programCode}}">
+                  		</div>
+                  	</div>
+                  	</div>
+                    <div class="row">
+                		<div class="col-md-6">
+                  		<div class="form-group">
+                                 <label>Program Manager:</label>
+                            <input type="text" class="form-control" name="programManager" autocomplete="off" id="Name" placeholder="Program Manager" value="{{project.programManager}}">
+                  		</div>
+                  	</div>
+                    	<div class="col-md-6">
+                  		<div class="form-group">
+                                 <label>Date:</label>
+                            <input type="date" class="form-control" name="assessmentDate" autocomplete="off" id="email" placeholder="Date" value="{{project.assessmentDate}}">
+                  		</div>
+                  	</div>
+                  	</div>
+
+
+                    <div class="row">
+
+	                  <div class="col-md-6">
+                  		<div class="form-group">
+                                 <label>Responsible:</label>
+                            <input type="text" class="form-control" name="responsible" autocomplete="off" id="email" placeholder="Responsible" value="{{project.responsible}}">
+                  		</div>
+                  	</div>
+                		<div class="col-md-3">
+                  		<div class="form-group">
+                                 <label>Estimated Time Frame:</label>
+                            <input type="text" class="form-control" name="estimatedFrame" autocomplete="off" id="Name" placeholder="months" value="{{project.estimatedFrame}}">
+                  		</div>
+                  	    </div>
+
+                    	<div class="col-md-3">
+                  		<div class="form-group">
+                                 <label>End Date:</label>
+                            <input type="date" class="form-control" name="endFrame" autocomplete="off" id="email" placeholder="End Date" value="{{project.endFrame}}">
+                  		</div>
+                  	</div>
+                  	</div>
+
+
+
+
+
+                  	
+
+					<div class="row">
+                  		<div class="col-md-6">
+                  		<div class="form-group">
+                                <label>Scope Description:</label> 
+                            <textarea type="text" class="form-control textarea" rows="3" name="description" autocomplete="off" id="Message" placeholder="Main Objectives.." value="{{project.description}}">{{project.description}}</textarea>
+                  		</div>
+                  	</div>
+					  	                  <div class="col-md-3">
+                  		<div class="form-group">
+                                 <label>Hourly Rate:</label>
+                            <input  type="text" class="form-control" name="hourlyRate" autocomplete="off" id="email" placeholder="€/h" value="{{project.hourlyRate}}">
+                  		</div>
+                  	</div>
+                		<div class="col-md-3">
+                  		<div class="form-group">
+                                 <label>Budget:</label>
+                            <input type="text" class="form-control" name="budget" autocomplete="off" id="Name" placeholder="€" value="{{project.budget}}">
+                  		</div>
+                  	    </div>
+					
+                  	</div>
+
+
+<br>
+<h3>RISKS & DEPENDENCIES:</h3>
+                        <div class="row">
+                    <div class="col-md-12">
+                  		<div class="form-group">
+                            <textarea type="text" rows="4" class="form-control textarea"  name="risks" autocomplete="off" id="Message" placeholder="RISKS & DEPENDENCIES" value="{{project.risks}}">{{project.risks}}</textarea>
+                  		</div>
+                  	</div> 
+                        </div> 
+                    
+
+		  <br>
+
+
+<div class="labels" style="margin-bottom:-20px;">
+<div class="row" > 
+	<div class="col-md-3">
+    <div class="form-group">       
+<label>Title: </label> 
+    </div>
+	</div>
+
+	<div class="col-md-4">
+    <div class="form-group">  
+<label>Start date:</label>
+   </div>
+   </div>
+
+   <div class="col-md-4">
+   <div class="form-group">
+<label>End date:</label>
+   </div>
+   </div>
+</div>
+</div>
+
+
+{{#each newList}}
+		<input type="hidden" name="title_id" value="{{this._id}}">
+
+<div class="row"> 
+
+  
+						<div class="col-md-3">
+                  		<div class="form-group">
+                  		
+     <input type="text" class="form-control" name="newTitle" autocomplete="off" id="Name" placeholder="Title" value="{{this.newTitle}}"> 
+	 </div>
+     </div>
+
+
+				        <div class="col-md-4">
+                  		<div class="form-group">
+                  		
+     <input type="date" class="form-control" name="startDate" autocomplete="off" id="Name" placeholder="Title" value="{{this.startDate}}"> 
+	 </div>
+     </div>
+
+
+	                    <div class="col-md-4">
+                  		<div class="form-group">
+                  	    
+     <input type="date" class="form-control" name="endDate" autocomplete="off" id="Name" placeholder="Title" value="{{this.endDate}}">
+	 </div>
+     </div> 
+              
+</div>
+
+
+ {{/each}}
+ <div class="row">
+                    <div class="col-md-12">
+                    <button type="submit" style="background-color:dimgray;" class="btn btn-info" ><i class="fa fa-database"></i>Update</button>
+                    <a class="btn btn-secondary" href="/"><i class="fa fa-list-alt"></i>View All</a>
+                  </div>
+                  </div>
+
+
+                </form>

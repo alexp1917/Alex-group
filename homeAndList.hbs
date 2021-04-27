@@ -1,0 +1,71 @@
+{{!-- <h3>{{viewTitle}}</h3> --}}
+
+<a class="btn btn-secondary" href="/create"><i class="fa fa-plus"></i>New Project</a>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h4>List Of Projects: </h4> 
+<table class="table table-dark table-hover" style="position:relative; margin-left:-80;  ">
+
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Code</th>
+            <th>Manager</th>
+            <th>Date</th>
+            <th class="col-md-4">Comment</th>
+
+            <th></th>
+
+        
+        </tr>
+    </thead>
+    <tbody> 
+         
+         {{#each list   }}
+       
+
+
+        <tr>
+            <td>{{this.title}}</td>
+            <td>{{this.programCode}}</td>
+            <td>{{this.programManager}}</td>
+            <td>{{this.assessmentDate}}</td>
+            <td>{{this.comment}}</td>
+
+
+
+
+
+        
+            <td style="position:relative; margin-left:-60px; ">
+               <a href="/create/{{this._id}}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+               <a href="/update/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+               <a href="/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+               <a href="/assessment"><i class="fa fa-line-chart" aria-hidden="true"></i></a>
+
+
+
+            </td>
+        </tr>
+       {{/each}} 
+
+ 
+        
+
+        
+    </tbody>
+
+</table>
+
+
+
+		
+
+
+
+
+
