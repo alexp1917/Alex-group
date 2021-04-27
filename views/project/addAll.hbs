@@ -49,11 +49,13 @@
     {{/each}}
 
     <div class="row">
+        <a href="/" class="btn btn-secondary" style="position: absolute; right: 0; margin-right:40px;  margin-top: -60px;" >
+            <i class="fa fa-paper-plane-o" aria-hidden="true"></i>Submit
+        </a>
 
-        <a href="/" class="btn btn-secondary" style="position: absolute; right: 0; margin-right:40px;  margin-top: -60px;" ><i class="fa fa-paper-plane-o" aria-hidden="true"></i>Submit</a>
-
-        <button type="submit" class="btn btn-secondary" style="position: absolute; right: 0; margin-right:145px; margin-top: -60px;" ><i class="fa fa-save"></i>Generate Report</button>
-
+        <button type="submit" class="btn btn-secondary" style="position: absolute; right: 0; margin-right:145px; margin-top: -60px;" >
+            <i class="fa fa-save"></i>Generate Report
+        </button>
     </div>
 
 </form>
@@ -68,19 +70,14 @@
     <div class="row">
 
         <div class="col-md-6">
-        <div class="form-group">
-
-
-            <label>Title: {{project.title}}</label>
+            <div class="form-group">
+                <label>Title: {{project.title}}</label>
+            </div>
         </div>
-        </div>
-
-
 
         <div class="col-md-6">
             <div class="form-group">
-                     <label>Program Code: {{project.programCode}}</label>
-
+                <label>Program Code: {{project.programCode}}</label>
             </div>
         </div>
     </div>
@@ -124,12 +121,8 @@
     </div>
 </h5>
 
-
-
 <br>
 <br>
-
-
 <h6>____________________________________</h6>
 
 <br>
@@ -207,8 +200,6 @@
                     </div>
                 </div>
             --}}
-
-
 
             <button
                 type="submit"
