@@ -34,7 +34,7 @@ function classForPercentage(percent) {
 }
  
 function addPercentInfoToMs(ms) {
-    var percent = milestonePercentage(ms);
+    var percent = milestonePercentage(ms, ms.reportLastRenderDate);
     ms.classForPercentage = classForPercentage(percent);
     ms.width = Math.min(100, percent);
 }
@@ -129,16 +129,52 @@ function insertRecord(req,res){
 
 
 //get the specific project with its titles list populated 
-router.get('/create/:projectId', (req,res) => {
+router.get('/create/:projectId', (req, res, next) => {
     const id = req.params.projectId;
     const titlesList = [];
     
     Project.findOne({_id:id}).populate('titlesList')
-            .exec((err, project) => {
+            .exec(async (err, project) => {
         if (!err) {
             // list of titles for the project
             var { titlesList } = project;
+
+            /*
+                Make sure that all of these titles know their render date.
+
+                Any that are missing, save it and update it later.
+
+                If the title does not have a date, use the project date but do
+                not change the title's last render date.
+             */
+            var needSaving = [];
+            titlesList.forEach(title => {
+                // database is up to date
+                if (title.reportLastRenderDate)
+                    return;
+
+                // we have a problem
+                if (!title.reportLastRenderDate) {
+                    // but the project has a last report date, so its fine
+                    if (project.reportLastRenderDate) {
+                        title.reportLastRenderDate = project.reportLastRenderDate;
+                        return;
+                    }
+
+                    // no date in either place, this is considered missing
+                    title.reportLastRenderDate = new Date();
+                    needSaving.push(title);
+                }
+            });
+
             titlesList.forEach(addPercentInfoToMs);
+
+            // now actually save
+            try {
+                await Promise.all(needSaving.map(t => t.save()));
+            } catch (e) {
+                return next(e);
+            }
  
             var locals = {
                 viewTitle: "Project Description:",

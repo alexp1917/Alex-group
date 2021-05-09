@@ -44,10 +44,23 @@ var projectSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
          ref: "Title",
          required: true
-    }]
+    }],
+    /*
+        Report Last Render Date (relates to progress bar feature)
+
+        This field gives the ability to save the state of all the progress
+        bars of a project together, instead of displaying them based on the
+        current date.
+
+        When rendering the progress bars, make sure to check this field, and
+        also the same field in the individual titles.
+     */
+    reportLastRenderDate: {
+        type: Date,
+    },
 });
 
- mongoose.model('Project', projectSchema);
+module.exports = mongoose.model('Project', projectSchema);
 
 //  const Project = mongoose.model('Project', projectSchema);
 

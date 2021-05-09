@@ -8,4 +8,4 @@ var commentsSchema = new mongoose.Schema({
    
 });
 
- mongoose.model('Comments', commentsSchema);
+module.exports = mongoose.model('Comments', commentsSchema);

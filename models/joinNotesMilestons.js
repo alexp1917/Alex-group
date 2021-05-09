@@ -13,5 +13,5 @@ var joinNotesMilestonsSchema = new mongoose.Schema({
 
 });
 
- mongoose.model('JoinNotesMilestons', joinNotesMilestonsSchema);
+module.exports = mongoose.model('JoinNotesMilestons', joinNotesMilestonsSchema);
 

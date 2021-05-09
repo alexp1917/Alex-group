@@ -25,11 +25,17 @@ var titleSchema = new mongoose.Schema({
       joinNotesMilestons: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'JoinNotesMilestons'
-    }
+    },
+    /*
+        See reportLastRenderDate in the Project model ('./project.js')
+     */
+    reportLastRenderDate: {
+        type: Date,
+    },
 
 });
 
- mongoose.model('Title', titleSchema);
+module.exports = mongoose.model('Title', titleSchema);
 
 
 
